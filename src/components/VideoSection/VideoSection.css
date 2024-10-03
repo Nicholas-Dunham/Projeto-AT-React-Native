@@ -1,0 +1,45 @@
+.video-section {
+  margin: 20px;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.video-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap; /* Permite que os itens quebrem de linha em telas menores */
+}
+
+.video-item {
+  flex: 1 1 calc(33.333% - 20px); /* Tamanho flexível para 3 itens na mesma linha */
+  max-width: 100%;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.video-item iframe {
+  width: 100%;
+  height: 100%; /* Para garantir que os vídeos sejam redimensionados corretamente */
+}
+
+/* Responsividade para telas médias (tablets) */
+@media (max-width: 768px) {
+  .video-item {
+    flex: 1 1 calc(50% - 20px); /* Reduz para 2 vídeos por linha */
+  }
+}
+
+/* Responsividade para telas pequenas (smartphones) */
+@media (max-width: 480px) {
+  .video-item {
+    flex: 1 1 100%; /* Em telas pequenas, cada vídeo ocupa 100% da largura */
+    margin-bottom: 20px;
+  }
+}

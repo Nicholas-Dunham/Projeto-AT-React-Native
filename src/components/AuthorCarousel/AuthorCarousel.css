@@ -1,0 +1,41 @@
+.author-carousel {
+  padding: 20px;
+  text-align: center;
+}
+
+.carousel-title {
+  display: flex;
+  justify-content: flex-start;
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.author-card {
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s;
+  width: 100%; /* Garante que os cards fiquem proporcionais ao espaço */
+}
+
+.author-card:hover {
+  transform: scale(1.05);
+}
+
+.author-card h3 {
+  font-size: 14px; /* Nome do autor menor */
+  color:var(--light-black-color);
+  margin-top: 8px; /* Menor distância entre a imagem e o nome */
+  text-align: center; /* Centraliza o nome */
+}
+
+.author-image {
+  width: 80px; /* Tamanho menor da imagem */
+  height: 80px;
+  border-radius: 50%; /* Torna a imagem circular */
+  object-fit: cover;
+  margin: 0 auto; /* Garante que a imagem fique centralizada */
+  border: 2px solid var(--white-color); /* Borda menor */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

@@ -1,0 +1,91 @@
+.book-carousel {
+  padding: 40px 0;
+  background-color: #f9f9f9; /* Fundo leve */
+}
+
+.carousel-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-family: 'Poppins', sans-serif; /* Usando a fonte Poppins */
+  color: #333;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  font-size: 20px;
+  color: #fff;
+}
+
+.book-card {
+  padding: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  text-align: left; /* Alinhar todo o conteúdo à esquerda */
+  display: flex!important; /* Alinhamento flexível */
+  flex-direction: column; /* Manter direção vertical */
+  justify-content: flex-start;
+}
+
+.book-card:hover {
+  transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
+}
+
+.book-cover {
+  width: 150px; /* Capa menor */
+  height: 220px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+.book-card h3 {
+  font-size: 1.1rem;
+  font-family: 'Poppins', sans-serif; /* Usando a fonte Poppins */
+  color: var(--light-black-color);
+  margin-bottom: 5px;
+  text-transform: uppercase; /* Título em maiúsculo */
+}
+
+.book-card .author {
+  font-size: 0.9rem; /* Tamanho ajustado para o autor */
+  color: var(--grey-color);
+  margin-bottom: 5px;
+  font-family: 'Poppins', sans-serif; /* Usando a fonte Poppins */
+}
+
+.book-card .year {
+  font-size: 0.8rem; /* Tamanho menor para o ano */
+  font-weight: 400;
+  color: var(--light-grey-color);
+  text-transform: uppercase;
+  font-family: 'Poppins', sans-serif; /* Usando a fonte Poppins */
+}
+
+.slick-slide {
+  padding: 0; /* Espaço entre os slides */
+}
+
+/* Estilos responsivos */
+@media (max-width: 1024px) {
+  .book-cover {
+    height: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-title {
+    font-size: 1.5rem;
+  }
+
+  .book-cover {
+    height: 180px;
+  }
+}

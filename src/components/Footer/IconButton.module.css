@@ -1,0 +1,40 @@
+.buttonIcons {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  border: #fff 2px solid;
+  font-size: 20px;
+  color: var(--white-color);
+  text-align: center;
+  line-height: 35px;
+  margin-right: 3px;
+  margin-bottom: 5px;
+  transition: background-color 0.3s;
+}
+
+/* Estilo para o botão primário */
+.primary {
+  border-radius: 5px;
+}
+
+/* Estilo para o botão secundário */
+.secondary {
+  border-radius: 50%;
+}
+
+/* Tamanho reduzido */
+.small {
+  width: 24.5px;
+  height: 24.5px;
+  line-height: 24.5px;
+  font-size: 14px;
+}
+
+/* Tamanho grande (dobro do pequeno) */
+.large {
+  width: 49px;
+  height: 49px;
+  line-height: 49px;
+  font-size: 28px;
+}

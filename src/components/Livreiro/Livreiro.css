@@ -1,0 +1,98 @@
+/* Estilo para telas grandes - sem carrossel */
+.header-content {
+  margin-top: 35px;
+  min-height: 50vh;
+  background: linear-gradient(rgba(114, 68, 15, 0.3), rgba(114, 68, 15, 0.6)), url("../../images/library-img.jpg") center/cover no-repeat;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+/* Carrossel com 2 cards visíveis e parte do próximo a partir de 970px */
+@media (max-width: 970px) {
+  .header-content {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .fundo {
+    flex: 0 0 42%;
+    scroll-snap-align: start;
+    margin-right: 10px;
+    min-width: 42%;
+    padding: 20px 15px; 
+  }
+
+  .header-title {
+    font-size: 1.7rem;
+  }
+
+  .header-text {
+    margin-top: -25px;
+    font-size: 1.4rem; 
+  }
+
+  .tp {
+    width: 100px; 
+    height: 125px;
+  }
+}
+
+/* Carrossel com 1 card visível e parte do próximo a partir de 670px */
+@media (max-width: 670px) {
+  .header-content {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .fundo {
+    flex: 0 0 85%;
+    scroll-snap-align: start;
+    min-width: 85%;
+    margin: 0 auto 0 10px;
+    padding: 20px 10px; 
+  }
+
+  .header-title {
+    font-size: 1.7rem; 
+  }
+
+  .header-text {
+    font-size: 1.3rem; 
+  }
+
+  .tp {
+    width: 80px; 
+    height: 115px;
+  }
+}
+
+/* Estilos adicionais para telas menores que 490px */
+@media (max-width: 490px) {
+  .fundo {
+    padding: 15px 8px;
+    max-width: 100%;
+  }
+
+  .header-title {
+    font-size: 1.4rem; 
+  }
+
+  .header-text {
+    margin-top: -25px;
+    font-size: 1.2rem; 
+  }
+
+  .tp {
+    width: 50px; 
+    height: 90px;
+  }
+
+  .form-control {
+    font-size: 1.5rem !important;
+  }
+}

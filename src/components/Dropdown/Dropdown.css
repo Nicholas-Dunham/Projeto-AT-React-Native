@@ -1,0 +1,127 @@
+.primary-navigation {
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  font-size: 16px;
+}
+
+.primary-navigation ul li {
+  list-style: none;
+  display: inline-block;
+  position: relative; /* Para permitir que o dropdown seja posicionado relativamente a este item */
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  opacity: 0.9;
+  font-size: 12px;
+}
+
+.primary-navigation li a {
+  color: var(--black-color);
+  text-decoration: none;
+}
+
+.primary-navigation li a:hover {
+  color: var(--orange-color);
+}
+
+.primary-navigation li:hover {
+  cursor: pointer;
+}
+
+/* Estilos do dropdown */
+.dropdown {
+  margin-top: 15px;
+  visibility: visible;
+  opacity: 1;
+  position: absolute;
+  top: 100%; /* Colocar o dropdown abaixo do nav-item */
+  left: 50%; /* Centralizar o dropdown horizontalmente em relação ao nav-item */
+  transform: translateX(-50%); /* Ajuste para garantir o alinhamento central exato */
+  padding: 10px;
+  background: var(--white-color);
+  width: 250px; /* Largura total do dropdown para caber duas colunas */
+  display: flex;
+  justify-content: space-between; /* Espaçamento uniforme entre as colunas */
+  box-shadow: 0px 3px 5px -1px #ccc;
+  transition: all 0.3s ease;
+}
+
+.dropdown-column {
+  width: 48%; /* Cada coluna ocupa aproximadamente metade da largura */
+}
+
+.dropdown-column ul {
+  display: flex;
+  flex-direction: column; /* As listas ul são orientadas verticalmente */
+}
+
+.dropdown-column ul li {
+  margin-bottom: 15px; /* Espaçamento entre os itens */
+}
+
+.dropdown-column ul li span {
+  display: inline-block;
+}
+
+.dropdown-column ul li a:hover {
+  padding-left: 10px;
+  border-left: 2px solid #8f5;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: var(--orange-color);
+}
+
+ul li ul li a {
+  transition: all 0.5s ease;
+}
+
+.nav-link:hover{
+  color: var(--orange-color);
+}
+
+/* Melhorando a responsividade para telas menores */
+@media (max-width: 1200px) {
+  .dropdown {
+    z-index: 999;
+    margin-top: 0;
+    width: 100%; /* O dropdown ocupará toda a largura em telas pequenas */
+    flex-direction: column; /* Colocar as colunas em um layout vertical */
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .dropdown-column {
+    width: 100%; /* Cada coluna ocupará 100% da largura */
+  }
+
+  .dropdown-column ul li {
+    margin-bottom: 10px; /* Ajuste no espaçamento entre os itens */
+  }
+
+  .nav-link {
+    list-style: none;
+    display: inline-block;
+    position: relative; /* Para permitir que o dropdown seja posicionado relativamente a este item */
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    margin:0;
+    font-size: 2.2rem;
+    font-weight: 600;
+  }
+  .nav-item{
+    margin: 0;
+  }
+  .nav-link:hover{
+    color: var(--green-color);
+  }
+  .nav-item {
+    margin: 0;
+  }
+}
+
+.nav-item {
+  margin: 0;
+}

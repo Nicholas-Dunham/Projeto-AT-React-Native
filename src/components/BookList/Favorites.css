@@ -1,0 +1,12 @@
+.book-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Ajuste o minmax conforme a largura do componente Book */
+  gap: 20px; /* Espaçamento entre os componentes Book */
+  border-left: var(--orange-color) 2px solid;
+  border-right: var(--orange-color) 2px solid;
+}
+
+.title-cat{
+  margin-bottom: 20px;
+  justify-content: space-between;
+} 

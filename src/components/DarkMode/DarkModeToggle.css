@@ -1,0 +1,93 @@
+.toggle-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Alinhar à esquerda */
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--offwhite-color);
+  transition: 0.4s;
+  border-radius: 50%;
+  background-image: url("https://icons.veryicon.com/png/o/miscellaneous/linear-icon-45/sun-74.png");
+  background-size: 35px 35px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.switch input:checked + .slider {
+  background-color: var(--offwhite-color);
+  background-image: url("https://www.svgrepo.com/show/79251/crescent-moon.svg");
+  background-size: 20px 20px;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  left: 0;
+  top: 0;
+  background-color: transparent;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+.light-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: var(--orange-color);
+  height: 100%;
+  width: 100%;
+  transition: all 0.4s ease;
+  opacity: 0;
+}
+
+.switch input:checked ~ .light-back {
+  opacity: 1;
+}
+
+
+.dark-mode-desktop {
+  display: none;
+}
+
+/* Mostrar o Dark Mode Toggle dentro do menu hambúrguer em telas menores */
+@media screen and (max-width: 1200px) {
+  .dark-mode-mobile {
+    display: block;  /* Certifique-se de que está visível */
+  }
+  .dark-mode-desktop {
+    display: none;
+  }
+}
+
+/* Mostrar o Dark Mode Toggle fora do menu em telas maiores */
+@media screen and (min-width: 1200px) {
+  .dark-mode-desktop {
+    display: block;  /* Visível em telas maiores */
+  }
+  .dark-mode-mobile {
+    display: none;  /* Oculto dentro do menu em telas grandes */
+  }
+}

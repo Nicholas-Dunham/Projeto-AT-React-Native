@@ -1,0 +1,6 @@
+.divider {
+  border: none;
+  border-top: 3px solid var(--orange-color);
+  margin: 20px 0; /* Ajuste a margem conforme necessário */
+  width: 100%; /* Para que a linha ocupe toda a largura do contêiner */
+}

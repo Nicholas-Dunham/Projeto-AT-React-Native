@@ -1,0 +1,29 @@
+.search-form{
+    width: 100%;
+    max-width: 680px;
+}
+.search-form-elem{
+    background-color: var(--offwhite-color);
+    border-radius: 6rem;
+}
+.search-form-elem .form-control{
+    background-color: var(--offwhite-color);
+    font-size: 2rem;
+    padding: 0.6rem;
+    margin-left: 15px;
+}
+.search-form-elem .form-control::placeholder{
+    opacity: 0.9;
+}
+.pesquisa{
+    color: var(--orange-color);
+}
+.circle{
+    width: 65px;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: var(--white-color);
+}
