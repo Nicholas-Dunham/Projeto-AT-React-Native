@@ -5,7 +5,7 @@ import { useGlobalContext } from '../../context.'; // Importa o contexto global 
 import nyTimesBestSellers from '../../data/nyTimesBestSellers';
 import './BookCarousel.css';
 
-const URL = "http://openlibrary.org/search.json?title=";
+const URL = "https://openlibrary.org/search.json?title=";
 
 const BookCarousel = () => {
   const { setSearchTerm, setResultTitle } = useGlobalContext(); // Obtém os setters do contexto global
