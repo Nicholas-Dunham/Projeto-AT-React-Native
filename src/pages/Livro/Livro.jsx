@@ -9,9 +9,9 @@ import VideoSection from '../../components/VideoSection/VideoSection';
 
 const Home = () => {
   const videoLinks1 = [
-    "https://www.youtube.com/embed/eTFy8RnUkoU",
-    "https://www.youtube.com/embed/AUw7laSlcbo",
-    "https://www.youtube.com/embed/muuWRKYi09s"
+    "https://www.youtube.com/embed/eTFy8RnUkoU?si=TvyG05s4_cNCplfS",
+    "https://www.youtube.com/embed/AUw7laSlcbo?si=Hi-f_NKlOTb642CF",
+    "https://www.youtube.com/embed/muuWRKYi09s?si=QVj-3lHE7UzXueHU"
   ];
 
   return (
