@@ -1,24 +1,30 @@
+// loader.js
+
 import React, { useEffect, useState } from 'react';
 import './Loader.css';
 import { useGlobalContext } from '../../context.'; 
 
-const Loader = ({ onComplete }) => {
+const Loader = () => { // Removendo a prop onComplete
   const [progress, setProgress] = useState(0);
   const { isDarkMode } = useGlobalContext();
+  
   useEffect(() => {
+    let isMounted = true;
     const interval = setInterval(() => {
       setProgress((oldProgress) => {
-        if (oldProgress >= 100) {
+        if (oldProgress >= 100 && isMounted) {
           clearInterval(interval);
-          onComplete(); // Chama a função de callback quando o progresso atinge 100%
-          return 100;
+          return 100; // Garante que o progresso finaliza em 100%
         }
-        return oldProgress + 5; // Simula o progresso de carregamento
+        return oldProgress + 5; // Incremento de 5% a cada 100ms
       });
-    }, 100); // Atualiza a cada 100ms
+    }, 100); 
 
-    return () => clearInterval(interval);
-  }, [onComplete]);
+    return () => {
+      isMounted = false; // Evita chamadas após o desmonte
+      clearInterval(interval);
+    };
+  }, []);
 
   return (
     <div className={`loader-container ${isDarkMode ? 'dark' : 'light'}`}>

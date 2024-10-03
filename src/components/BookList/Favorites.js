@@ -1,4 +1,3 @@
-// src/components/Favorites/Favorites.js
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useGlobalContext } from '../../context.'; 
@@ -13,8 +12,7 @@ const Favorites = () => {
   const { loading, setResultTitle } = useGlobalContext();
   const [favoriteBooks, setFavoriteBooks] = useState([]); // Para armazenar os detalhes dos livros favoritos
   const { isDarkMode } = useGlobalContext();
-
-
+  
   useEffect(() => {
     const fetchFavoriteBooks = async () => {
       const favoriteIds = JSON.parse(localStorage.getItem('favorites')) || [];
@@ -27,12 +25,18 @@ const Favorites = () => {
 
       try {
         const booksData = await Promise.all(favoriteIds.map(async (id) => {
-          const response = await fetch(`https://openlibrary.org/works/${id}.json`);
+          console.log("Original ID:", id); // Log do ID original para verificar o formato
+
+          // Verifica se o ID contém '/works/' antes de tentar remover
+          const cleanId = id.includes("/works/") ? id.replace("/works/", "") : id;
+          console.log("Clean ID:", cleanId); // Log do ID após a tentativa de limpeza
+
+          const response = await fetch(`https://openlibrary.org/works/${cleanId}.json`);
           const data = await response.json();
           const { covers, authors, title, first_publish_year } = data;
 
           return {
-            id,
+            id: cleanId, // Utiliza o ID limpo aqui
             author: authors ? authors.map(author => author.name) : ["Autor desconhecido"], // Array de nomes de autores
             cover_img: covers ? `https://covers.openlibrary.org/b/id/${covers[0]}-L.jpg` : coverImg,
             title: title,
@@ -43,7 +47,7 @@ const Favorites = () => {
         setFavoriteBooks(booksData);
         setResultTitle("Seus Livros Favoritos");
       } catch (error) {
-        console.log(error);
+        console.error("Erro ao buscar livros favoritos:", error);
       }
     };
 
@@ -72,7 +76,6 @@ const Favorites = () => {
                     cover_img={book.cover_img}
                     title={book.title}
                     author={book.author}
-                    edition_count={book.edition_count}
                     first_publish_year={book.first_publish_year}
                   />
                 ))

@@ -26,6 +26,11 @@ body.dark{
 .author-carousel.dark .author-image {
   box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1); 
 }
+.navbar.dark .brand-and-toggler .navbar-toggler-btn svg{
+
+    color: rgb(255 255 255)!important;
+
+}
 
 .divider.dark{
   background-color: var(--light-black-color);
@@ -36,11 +41,9 @@ body.dark{
   opacity: 1;
   color: var(--white-color);
 }
-.navbar.dark .nav-item{
+
+.navbar.dark .nav-link:hover{
   border-bottom: var(--green-color) 2px solid;
-}
-.navbar.dark .nav-item:hover{
-  border-bottom: var(--orange-color) 2px solid;
 }
 
 .container.dark .carousel-title{

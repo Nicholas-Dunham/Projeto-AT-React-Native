@@ -15,10 +15,12 @@ const BooksByCategory = () => {
   const { books, setBooks, setResultTitle } = useGlobalContext();
   const { isDarkMode } = useGlobalContext();
 
-  const [showContent, setShowContent] = useState(false);
+  // Estado de loading local
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchBooksByCategory = async () => {
+      setLoading(true); // Começa o carregamento
       try {
         const response = await fetch(`https://openlibrary.org/subjects/${category.tag}.json`);
         const data = await response.json();
@@ -47,6 +49,8 @@ const BooksByCategory = () => {
         }
       } catch (error) {
         console.log(error);
+      } finally {
+        setLoading(false); // Finaliza o carregamento
       }
     };
 
@@ -65,8 +69,8 @@ const BooksByCategory = () => {
           <span className='fs-18 fw-6'>Voltar</span>
         </button>
         </div>
-          {!showContent ? (
-            <Loading onComplete={() => setShowContent(true)} /> // Mostra o loader até o progresso atingir 100%
+          {loading ? ( // Exibe o loader enquanto está carregando
+            <Loading /> 
           ) : (
             <div className="book-list grid">
               {books.map((book) => (
