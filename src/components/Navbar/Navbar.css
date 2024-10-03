@@ -65,7 +65,7 @@
 .nav-link:hover{
         border-bottom: var(--green-color) 2px solid;
     }
-@media screen and (min-width: 1200px){
+@media screen and (min-width: 1201px){
     .navbar-collapse{
         display: flex;
         justify-content: center!important;
