@@ -23,15 +23,15 @@ const CarouselComponent = () => {
     const images = [         
         {
             url: carrossel1,
-            link: "http://localhost:3000/category/biography"
+            link: "/category/biography"
         },
         {
             url: carrossel2,
-            link: "http://localhost:3000/category/fantasy"
+            link: "/category/fantasy"
         },
         {
             url: carrossel3,
-            link: "http://localhost:3000/category/children"
+            link: "/category/children"
         }
     ];
 
