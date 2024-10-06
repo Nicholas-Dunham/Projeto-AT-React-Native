@@ -40,10 +40,11 @@ body.dark{
 .navbar.dark .nav-link{
   opacity: 1;
   color: var(--white-color);
+  border-bottom: var(--green-color) 2px solid;
 }
 
 .navbar.dark .nav-link:hover{
-  border-bottom: var(--green-color) 2px solid;
+  border-bottom: var(--orange-color) 2px solid;
 }
 
 .container.dark .carousel-title{

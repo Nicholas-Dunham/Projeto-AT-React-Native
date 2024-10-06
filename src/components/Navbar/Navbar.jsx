@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import "./Navbar.css";
 import logo from "../../images/logo.png";
+import logoWhite from "../../images/livreiro-white.svg";
 import textoLogo from "../../images/livreiro.svg";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import Dropdown from '../Dropdown/Dropdown';
@@ -24,7 +25,7 @@ const Navbar = () => {
         <div className='brand-and-toggler flex flex-sb'>
           <Link to="/" className='navbar-brand flex'>
             <img id="logo-nav" src={logo} alt="site logo" />
-            <img id="txt" src={textoLogo} alt="site logo" />
+            <img id="txt" src={isDarkMode ? logoWhite : textoLogo} alt="site logo" />
           </Link>
           <button type="button" className='navbar-toggler-btn' onClick={handleNavbar}>
             <HiOutlineMenuAlt3 size={35} style={{
